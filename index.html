@@ -2,9 +2,11 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="סדנה מעשית ליצירת סרטונים עם Google Vids, לקראת סוכות. חלק 1 מתוך 2: סיור בממשק, יצירה ועריכה, אווטארים, תמונות והקלטת מסך.">
-<title>סרטונים עם Google Vids לסוכות</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Google Vids חלק א׳</title>
+</head>
+<body>
+
 <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -383,9 +385,19 @@
   .video-ph{ display:flex; flex-direction:column; align-items:center; gap:9px; color:var(--ink-soft); font-size:13.5px; text-align:center; padding:0 20px; }
   .video-ph-ic{ width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center;
     background:linear-gradient(135deg, var(--palm), var(--myrtle)); color:#fff; font-size:19px; }
+
+  @media (min-width:721px){ .slide-inner{padding-bottom:50px;} }
+  @media (max-width:720px){ .slide-inner{padding-bottom:34px;} .agenda-grid{gap:8px;} .agenda-card{padding:10px 12px;} }
+  .video-embed{width:min(720px, 94%, calc((min(690px,84vh) - 290px) * 16 / 9));}
+  .storyboard-video-wrap{height:min(210px, calc(min(690px,84vh) - 375px));}
+  .storyboard-video-wrap.vertical{height:min(300px, calc(min(690px,84vh) - 375px));}
+  .storyboard-video-wrap.vertical.big{height:min(308px, calc(min(690px,84vh) - 375px));}
+  .gd-shot-card{width:min(680px, 100%, calc((min(690px,84vh) - 250px) * 1.5));}
+  .imgvid-video{width:min(205px, 38%, calc((min(690px,84vh) - 330px) * 9 / 16));}
+  .imgvid-media{width:min(220px, 42%, calc(min(690px,84vh) - 400px));}
+  .storyboard-images.single-small .storyboard-img-wrap{width:min(280px, 85%, calc(min(690px,84vh) - 390px));}
 </style>
-</head>
-<body>
+
 
 <div id="stateNode" data-slide="0"></div>
 <div class="deck" id="deck"></div>
@@ -517,7 +529,7 @@ var SLIDES = [
    eyebrow:"צפייה בהקלטה",
    title:"הקלטת הסדנה",
    lede:"לחצו על הווידאו להפעלה, או לפתיחה בחלון נפרד.",
-   video:{url:"", embed:"", placeholder:"ההקלטה תתווסף כאן אחרי הסדנה"},
+   video:{url:"https://youtu.be/40uBw-w2j-Q", embed:"40uBw-w2j-Q"},
    chips:[]},
 
   {kind:"about",
@@ -1043,5 +1055,7 @@ function closeLightbox(){ imgLightbox.classList.remove("show"); imgLightboxImg.s
 
 render();
 </script>
+
+
 </body>
 </html>
